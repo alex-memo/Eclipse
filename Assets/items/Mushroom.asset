@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Mushroom
   m_EditorClassIdentifier: 
   itemName: 
-  isMove: 0
-  hasEffect: 0
+  isMove: 1
+  effectType: 0
   effectDuration: 0
