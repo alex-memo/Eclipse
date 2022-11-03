@@ -38,6 +38,21 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3456926397
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Enemies
+    uniqueID: 247431143
+    locked: 0
+  - name: Player
+    uniqueID: 366354773
+    locked: 0
+  - name: Pipes
+    uniqueID: 2046893435
+    locked: 0
+  - name: Blocks
+    uniqueID: 1254030149
     locked: 0
