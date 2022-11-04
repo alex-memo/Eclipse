@@ -57,17 +57,6 @@ public class movementScript : MonoBehaviour
             velocity.y = jumpForce;
             isJumping = true;
         }
-        
-        if (body.Raycast(Vector2.right * velocity.x) && inputAxis == 1)//if player running into wall then (right)
-        {
-            velocity.x = 0;//set accel to that place to 0
-        }
-        /**
-        if (body.Raycast(Vector2.left * velocity.x)&&inputAxis==-1)//if player running into wall then (left)
-        {//for some reason this is funky
-            velocity.x = 0;//set accel to that place to 0
-        }
-        **/
     }
     /**
      * @memo 2022
@@ -88,6 +77,15 @@ public class movementScript : MonoBehaviour
     {
         inputAxis = Input.GetAxis("Horizontal");
         velocity.x = Mathf.MoveTowards(velocity.x,inputAxis*moveSpeed,Time.deltaTime*moveSpeed);
+        if (body.Raycast(Vector2.right * velocity.x) && inputAxis == 1)//if player running into wall then (right)
+        {
+            velocity.x = 0;//set accel to that place to 0
+        }
+        //if (body.Raycast(Vector2.down * velocity.x) && inputAxis == -1)//if player running into wall then (left)
+        //{//for some reason this is funky
+        //    velocity.x = 0;//set accel to that place to 0
+        //}
+
     }
     /**
      * @memo 2022
