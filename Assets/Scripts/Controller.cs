@@ -5,6 +5,7 @@ using UnityEngine;
 public class Controller : MonoBehaviour
 {
     public static Controller instance;
+    private movementScript movement;
     /**
      * @memo 2022
      * Awake method, creates an instance of the player controller
@@ -15,6 +16,7 @@ public class Controller : MonoBehaviour
         {
             instance = this;
         }
+        movement = GetComponent<movementScript>();
     }
     // Start is called before the first frame update
     void Start()
@@ -26,5 +28,13 @@ public class Controller : MonoBehaviour
     void Update()
     {
         
+    }
+    /**
+     * @memo 2022
+     * getter for get movement
+     */
+    public movementScript getMovement()
+    {
+        return movement;
     }
 }

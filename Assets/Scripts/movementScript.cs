@@ -18,7 +18,8 @@ public class movementScript : MonoBehaviour
     private float jumpForce=> (2f * jumpHeightMax) / (jumpTime / 2f);//defines jump force dynamically
     private float gravity=> (-2f * jumpHeightMax) / Mathf.Pow((jumpTime / 2f),2);//defines gravity dynamically
     private bool isGrounded;
-    public bool isJumping { get; private set; }
+    private bool isJumping;
+
     /**
      * @memo 2022
      * sets the variables from this script as needed
@@ -56,14 +57,17 @@ public class movementScript : MonoBehaviour
             velocity.y = jumpForce;
             isJumping = true;
         }
+        
         if (body.Raycast(Vector2.right * velocity.x) && inputAxis == 1)//if player running into wall then (right)
         {
             velocity.x = 0;//set accel to that place to 0
         }
+        /**
         if (body.Raycast(Vector2.left * velocity.x)&&inputAxis==-1)//if player running into wall then (left)
-        {
+        {//for some reason this is funky
             velocity.x = 0;//set accel to that place to 0
         }
+        **/
     }
     /**
      * @memo 2022
@@ -105,12 +109,15 @@ public class movementScript : MonoBehaviour
      */
     private void OnCollisionEnter2D(Collision2D collision)
     {
+       
         if (collision.gameObject.layer != LayerMask.NameToLayer("Items"))
         {
+            
             if (transform.dotProduct(collision.transform, Vector2.up))
-            {
+            {               
                 velocity.y = 0;//if hit head then reset velocity so that it doesnt stay floating
             }
         }
     }
+
 }
