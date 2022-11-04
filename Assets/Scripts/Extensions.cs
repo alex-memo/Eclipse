@@ -24,11 +24,16 @@ public static class Extensions
         float distance = .375f;//distance from below player to check, currently hardcoded could be collider *-.375
         RaycastHit2D hit = Physics2D.CircleCast(rb.position, radius, dir.normalized, distance, defaultMask);//creates raycast circle
 
-        return hit.collider != null && hit.rigidbody != rb;
+        //return hit.collider != null && hit.rigidbody != rb;
         if (hit.collider != null&&hit.rigidbody!=rb)//after && is safety measure for code not crash
         {
             return true;
         }
         return false;
+    }
+    public static bool dotProduct(this Transform transform, Transform other, Vector2 direction)
+    {
+        Vector2 dir = other.position - transform.position;//gets vir pointing from other to transform, most case transform is player
+        return Vector2.Dot(direction.normalized, direction)>.6f;
     }
 }
