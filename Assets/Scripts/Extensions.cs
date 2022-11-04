@@ -31,9 +31,13 @@ public static class Extensions
         }
         return false;
     }
+    /**
+     * @memo 2022
+     * gets the dot product from 2 vectors, if the angle is >.6 of 90 then means colliding in this case with your head
+     */
     public static bool dotProduct(this Transform transform, Transform other, Vector2 direction)
     {
-        Vector2 dir = other.position - transform.position;//gets vir pointing from other to transform, most case transform is player
+        //Vector2 dir = other.position - transform.position;//gets dir pointing from other to transform, most case transform is player
         return Vector2.Dot(direction.normalized, direction)>.6f;
     }
 }

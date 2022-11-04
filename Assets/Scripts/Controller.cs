@@ -12,22 +12,11 @@ public class Controller : MonoBehaviour
      */
     private void Awake()
     {
+        movement = GetComponent<movementScript>();
         if (instance == null)
         {
             instance = this;
-        }
-        movement = GetComponent<movementScript>();
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        }       
     }
     /**
      * @memo 2022

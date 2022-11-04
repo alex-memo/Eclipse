@@ -3,28 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 /**
  * @memo 2022
- * Movement script
+ * Script that handles the movement of the player
  */
 public class movementScript : MonoBehaviour
 {
     private Rigidbody2D body;
     private new Collider2D collider;
-    private float moveSpeed=8f;
+    private float moveSpeed = 8f;
     private float inputAxis;
     private Vector2 velocity;
     private Camera cam;
     private float jumpHeightMax = 5f;
     private float jumpTime = 1f;//idk was going to use rigidbody force but as depends on how long u press button the higher u jump that would be pain
-    private float jumpForce=> (2f * jumpHeightMax) / (jumpTime / 2f);//defines jump force dynamically
-    private float gravity=> (-2f * jumpHeightMax) / Mathf.Pow((jumpTime / 2f),2);//defines gravity dynamically
+    private float jumpForce => (2f * jumpHeightMax) / (jumpTime / 2f);//defines jump force dynamically
+    private float gravity => (-2f * jumpHeightMax) / Mathf.Pow((jumpTime / 2f), 2);//defines gravity dynamically
     private bool isGrounded;
     private bool isJumping;
+    private bool isRunning => Mathf.Abs(velocity.x) > .2f || Mathf.Abs(inputAxis) > .2;//gets absolute value of player velocity and if moving then running true else false
+                                                                                     //if(input then also running
+    private bool isTurning => (inputAxis > 0 && velocity.x < 0) || (inputAxis < 0 && velocity.x > 0);//if changiong direction then turning
+
+    private bool isFalling => velocity.y < 0 || !Input.GetButton("Jump");//if y vel is <0 or is jumping then isfalling
 
     /**
      * @memo 2022
      * sets the variables from this script as needed
      */
-    private void Awake() 
+    private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
         cam = Camera.main;
@@ -33,7 +38,7 @@ public class movementScript : MonoBehaviour
      * @memo 2022
      * Update method for player movement
      */
-    void Update() 
+    void Update()
     {
         move();
         isGrounded = body.Raycast(Vector2.down);//calls the extension file 
@@ -64,9 +69,9 @@ public class movementScript : MonoBehaviour
      */
     private void gravityApply()
     {
-        bool falling = velocity.y < 0 || !Input.GetButton("Jump");
-        float gravityMultiplayer=falling?2f:1f;//makes the game feel like mario, if the button is pressed then it will kinda increase force of jump, and if not it will make mario fall faster
-        velocity.y += gravity*Time.deltaTime*gravityMultiplayer;
+
+        float gravityMultiplayer = isFalling ? 2f : 1f;//makes the game feel like mario, if the button is pressed then it will kinda increase force of jump, and if not it will make mario fall faster
+        velocity.y += gravity * Time.deltaTime * gravityMultiplayer;
         velocity.y = Mathf.Max(velocity.y, gravity / 2);//prevents y to going a bit too fast, not even necessary but just safety measure
     }
     /**
@@ -76,7 +81,7 @@ public class movementScript : MonoBehaviour
     private void move()
     {
         inputAxis = Input.GetAxis("Horizontal");
-        velocity.x = Mathf.MoveTowards(velocity.x,inputAxis*moveSpeed,Time.deltaTime*moveSpeed);
+        velocity.x = Mathf.MoveTowards(velocity.x, inputAxis * moveSpeed, Time.deltaTime * moveSpeed);
         if (body.Raycast(Vector2.right * velocity.x) && inputAxis == 1)//if player running into wall then (right)
         {
             velocity.x = 0;//set accel to that place to 0
@@ -85,15 +90,10 @@ public class movementScript : MonoBehaviour
         {
             transform.eulerAngles = Vector3.zero;
         }
-        else if(velocity.x < 0)//flips sprite
+        else if (velocity.x < 0)//flips sprite
         {
-            transform.eulerAngles= new Vector3(0f, 180f, 0f);
+            transform.eulerAngles = new Vector3(0f, 180f, 0f);
         }
-        //if (body.Raycast(Vector2.down * velocity.x) && inputAxis == -1)//if player running into wall then (left)
-        //{//for some reason this is funky
-        //    velocity.x = 0;//set accel to that place to 0
-        //}
-
     }
     /**
      * @memo 2022
@@ -105,8 +105,8 @@ public class movementScript : MonoBehaviour
         pos += velocity * Time.fixedDeltaTime;
 
         Vector2 lEdge = cam.ScreenToWorldPoint(Vector2.zero);
-        Vector2 rEdge = cam.ScreenToWorldPoint(new Vector2(Screen.width,Screen.height));
-        pos.x = Mathf.Clamp(pos.x, lEdge.x+.5f, rEdge.x-.5f);//ensures player stays inside cam
+        Vector2 rEdge = cam.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
+        pos.x = Mathf.Clamp(pos.x, lEdge.x + .5f, rEdge.x - .5f);//ensures player stays inside cam
         body.MovePosition(pos);
     }
     /**
@@ -115,15 +115,38 @@ public class movementScript : MonoBehaviour
      */
     private void OnCollisionEnter2D(Collision2D collision)
     {
-       
+
         if (collision.gameObject.layer != LayerMask.NameToLayer("Items"))
         {
-            
+
             if (transform.dotProduct(collision.transform, Vector2.up))
-            {               
+            {
                 velocity.y = 0;//if hit head then reset velocity so that it doesnt stay floating
             }
         }
     }
-
+    /**
+     * @memo 2022
+     * getter for inJumping
+     */
+    public bool getIsJumping()
+    {
+        return isJumping;
+    }
+    /**
+    * @memo 2022
+    * getter for isTurning
+     */
+    public bool getIsTurning()
+    {
+        return isTurning;
+    }
+    /**
+    * @memo 2022
+    * getter for isRunning
+    */
+    public bool getIsRunning()
+    {
+        return isRunning;
+    }
 }

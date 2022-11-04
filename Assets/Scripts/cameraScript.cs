@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/**
+ * @memo 2022
+ * Script that handles the movement of the camera
+ */
 public class cameraScript : MonoBehaviour
 {
     private Transform player;
