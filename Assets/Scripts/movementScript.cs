@@ -81,6 +81,14 @@ public class movementScript : MonoBehaviour
         {
             velocity.x = 0;//set accel to that place to 0
         }
+        if (velocity.x > 0)
+        {
+            transform.eulerAngles = Vector3.zero;
+        }
+        else if(velocity.x < 0)//flips sprite
+        {
+            transform.eulerAngles= new Vector3(0f, 180f, 0f);
+        }
         //if (body.Raycast(Vector2.down * velocity.x) && inputAxis == -1)//if player running into wall then (left)
         //{//for some reason this is funky
         //    velocity.x = 0;//set accel to that place to 0
