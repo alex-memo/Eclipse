@@ -191,7 +191,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1775959486466161862}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c84586500a43c264db1a993465933e9a, type: 3}
   m_Name: 
@@ -199,7 +199,6 @@ MonoBehaviour:
   idle: {fileID: 21300000, guid: 0066f64ee648cdf4b931b85f86d3a3d8, type: 3}
   jump: {fileID: 21300000, guid: 25e45df4636a5d24683362254cd47bc7, type: 3}
   slide: {fileID: 21300000, guid: e0abbb6ac14f903448b7edd42c082b07, type: 3}
-  run: {fileID: 21300000, guid: 825d6f43f027fba47a748018818f5767, type: 3}
 --- !u!114 &4669833983755321508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,7 +206,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1775959486466161862}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66758ebbdd360c04ea5b12f5d7176c3d, type: 3}
   m_Name: 
@@ -319,7 +318,6 @@ MonoBehaviour:
   idle: {fileID: 21300000, guid: c0ba47b3f0a3abe468ee480bd6eda1e6, type: 3}
   jump: {fileID: 21300000, guid: 857f4ee31dfaa5c4da7c417131ce81a7, type: 3}
   slide: {fileID: 21300000, guid: 52eacd630a9d1f1428d77be7083c4778, type: 3}
-  run: {fileID: 21300000, guid: 909a5c80a272a124c8d2f10e8c47d726, type: 3}
 --- !u!114 &2888756018004854154
 MonoBehaviour:
   m_ObjectHideFlags: 0
