@@ -5,20 +5,35 @@ using UnityEngine;
 public class ItemMovement : MonoBehaviour
 {
     public item currentItem;
+    private Rigidbody2D rb; 
     private float moveSpeed = 2;
+    private float gravity = -10;
+    private Vector2 velocity;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    private void Awake() {
+        rb = GetComponent<Rigidbody2D>();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        if (currentItem.isMove) {
-            transform.Translate(new Vector3(-moveSpeed * Time.deltaTime, 0));
-        }
+        CheckMovement();
+        ApplyGravity();
+    }
 
+    void CheckMovement() {
+        if (currentItem.isMove) {
+            velocity.x = Mathf.MoveTowards(velocity.x, -moveSpeed, Time.deltaTime * moveSpeed);
+        }
+    }
+    void ApplyGravity() {
+        velocity.y += gravity * Time.deltaTime;
+        velocity.y = Mathf.Max(velocity.y, rb.Raycast(Vector2.down)?0:gravity); //If item is grounded, y velocity is 0. otherwise make sure it doesn't fall too fast
+
+        //Debug to check if raycast is working on mushroom (y velocity should be 0 when grounded) (ITS NOT WORKING HELP ALEX)
+        print(velocity.y);
+    }
+
+    private void FixedUpdate() {
+        rb.position += velocity * Time.fixedDeltaTime;
     }
 }
