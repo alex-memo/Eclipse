@@ -14,6 +14,10 @@ public class cameraScript : MonoBehaviour
      */
     private void Awake()
     {
+        
+    }
+    private void Start()
+    {
         player = Controller.instance.transform;
     }
     /**

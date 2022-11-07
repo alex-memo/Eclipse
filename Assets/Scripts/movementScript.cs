@@ -115,8 +115,23 @@ public class movementScript : MonoBehaviour
      */
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
-        if (collision.gameObject.layer != LayerMask.NameToLayer("Items"))
+        if(collision.gameObject.layer== LayerMask.NameToLayer("Enemy"))
+        {
+            if (transform.dotProduct(collision.transform, Vector2.down))
+            {
+                
+                if (Input.GetButtonDown("Jump"))
+                {
+                    velocity.y = jumpForce;
+                }
+                else
+                {
+                    velocity.y = jumpForce / 2;
+                }
+                isJumping = true;
+            }
+        }
+        else if (collision.gameObject.layer != LayerMask.NameToLayer("Items"))
         {
 
             if (transform.dotProduct(collision.transform, Vector2.up))
