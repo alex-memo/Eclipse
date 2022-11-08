@@ -37,7 +37,7 @@ public static class Extensions
      */
     public static bool dotProduct(this Transform transform, Transform other, Vector2 direction)
     {
-        //Vector2 dir = other.position - transform.position;//gets dir pointing from other to transform, most case transform is player
-        return Vector2.Dot(direction.normalized, direction)>.6f;
+        Vector2 dir = other.position - transform.position;//gets dir pointing from other to transform, most case transform is player       
+        return Vector2.Dot(dir.normalized, direction)>.25f;
     }
 }
