@@ -44,6 +44,7 @@ public class spriteRendererScript : MonoBehaviour
  */
     private void OnDisable()
     {
+        run.enabled = false;
         spriteRenderer.enabled = false;
     }
     /**

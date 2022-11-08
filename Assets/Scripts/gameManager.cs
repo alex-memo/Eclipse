@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+/**
+ * @memo 2022
+ * Game manager script
+ */
 public class gameManager : MonoBehaviour
 {
     public static gameManager instance;
@@ -10,7 +13,10 @@ public class gameManager : MonoBehaviour
     private int stage;
     private int lives;
     private int coins;
-
+    /**
+ * @memo 2022
+ * On awake, create instance of game manager if there is alr on then destroy
+ */
     private void Awake()
     {
         if (instance == null)
@@ -22,8 +28,12 @@ public class gameManager : MonoBehaviour
         {
             DestroyImmediate(gameObject);
         }
-       
+
     }
+    /**
+ * @memo 2022
+ * on destroy if this was the instance the instance is now null
+ */
     private void OnDestroy()
     {
         if (instance == this)
@@ -31,22 +41,38 @@ public class gameManager : MonoBehaviour
             instance = null;
         }
     }
+    /**
+ * @memo 2022
+ * on start creates a new game
+ */
     void Start()
     {
         NewGame();
     }
+    /**
+ * @memo 2022
+ * on new game resets variebles and sets world to 1-1
+ */
     private void NewGame()
     {
         lives = 3;
         coins = 0;
         LoadLevel(1, 1);
     }
+    /**
+ * @memo 2022
+ * loads the received world
+ */
     private void LoadLevel(int w, int s)
     {
         world = w;
         stage = s;
         SceneManager.LoadScene($"{world}-{stage}");
     }
+    /**
+ * @memo 2022
+ * on die decrease lives by 1 and reset current level if game no lives then game over
+ */
     public void onDie()
     {
         lives--;
@@ -59,15 +85,27 @@ public class gameManager : MonoBehaviour
             GameOver();
         }
     }
+    /**
+ * @memo 2022
+ * game over, resets the game
+ */
     private void GameOver()
     {
         //for now just restart game after 3sec
         Invoke(nameof(NewGame), 3f);
     }
-    public void onDie(float delay)
+    /**
+ * @memo 2022
+ * on die but receives a delay to reset the game
+ */
+    public void onDie(float delay)//resets the level basically
     {
         Invoke(nameof(onDie), delay);
     }
+    /**
+     * @memo 2022
+     * gets the next level and loads it
+     */
     public void NextLevel()
     {
         LoadLevel(world, stage + 1);//if full game remaking then should have logic as follows
