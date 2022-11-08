@@ -24,7 +24,7 @@ public class ItemMovement : MonoBehaviour
         if (currentItem.isMove) {
             velocity.x = Mathf.MoveTowards(velocity.x, -moveSpeed, Time.deltaTime * moveSpeed);
         }
-    }
+        }
     void ApplyGravity() {
         velocity.y += gravity * Time.deltaTime;
         velocity.y = Mathf.Max(velocity.y, rb.Raycast(Vector2.down)?0:gravity); //If item is grounded, y velocity is 0. otherwise make sure it doesn't fall too fast
@@ -35,5 +35,7 @@ public class ItemMovement : MonoBehaviour
 
     private void FixedUpdate() {
         rb.position += velocity * Time.fixedDeltaTime;
+        if (rb.Raycast(Vector2.down)) print("grounded"); //debug
+        velocity.y = Mathf.Max(velocity.y, rb.Raycast(Vector2.down) ? 0 : gravity); //If item is grounded, y velocity is 0. otherwise make sure it doesn't fall too fast
     }
 }
