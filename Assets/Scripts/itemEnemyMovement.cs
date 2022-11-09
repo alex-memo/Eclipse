@@ -68,6 +68,7 @@ public class itemEnemyMovement : MonoBehaviour
         if (rb.Raycast(dir))
         {
             dir = -dir;
+            transform.eulerAngles = new Vector3(0f, 180f, 0f);
         }
         if (rb.Raycast(Vector2.down))
         {
