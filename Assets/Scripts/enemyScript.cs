@@ -63,4 +63,13 @@ public class enemyScript : MonoBehaviour
         GetComponent<animationScript>().enabled = false;
         GetComponent<SpriteRenderer>().sprite = deathSprite;
     }
+    /**
+     * @memo 2022
+     * call action when this entity is on top of a block that the player hit
+     */
+    public void blockHit()
+    {
+        transform.eulerAngles = new Vector3(0f, 0f, 180f);
+        hit();
+    }
 }

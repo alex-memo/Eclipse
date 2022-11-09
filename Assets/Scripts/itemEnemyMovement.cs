@@ -27,7 +27,10 @@ public class itemEnemyMovement : MonoBehaviour
  */
     private void OnBecameVisible()
     {
-        enabled = true;
+        if (!TryGetComponent(out itemScript itemScript))
+        {//if not item
+            enabled = true;
+        }
     }
     /**
  * @memo 2022
@@ -66,7 +69,18 @@ public class itemEnemyMovement : MonoBehaviour
         if (rb.Raycast(dir, GetComponent<Collider2D>().offset.x))//x axis
         {
             dir = -dir;
-            transform.eulerAngles = new Vector3(0f, 180f, 0f);
+            if(!TryGetComponent(out itemScript itemScript))//if not item
+            {
+                if (transform.eulerAngles.y == 0)
+                {
+                    transform.eulerAngles = new Vector3(0f, 180f, 0f);
+                }
+                else
+                {
+                    transform.eulerAngles = Vector3.zero;
+                }
+                
+            }          
         }
         if (rb.Raycast(Vector2.down, GetComponent<Collider2D>().offset.y))
         {

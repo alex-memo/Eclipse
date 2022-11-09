@@ -11,6 +11,8 @@ public class gameManager : MonoBehaviour
     private int stage;
     private int lives;
     private int coins;
+
+    public item fireFlower;
     /**
  * @memo 2022
  * On awake, create instance of game manager if there is alr on then destroy

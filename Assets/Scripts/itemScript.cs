@@ -5,20 +5,21 @@ using UnityEngine;
 */
 public class itemScript : MonoBehaviour
 {
+    [SerializeField]
     private item item;
-    itemEnemyMovement movement;
+    private itemEnemyMovement movement;
     /**
 * @memo 2022
 * start method, if the item is supposed to mode, adds component to move and sets direction and speed for it
 */
     private void Start()
     {
-        if (item.isMove)
+        movement = GetComponent<itemEnemyMovement>();
+        if (movement != null)
         {
-            movement=gameObject.AddComponent(typeof(itemEnemyMovement))as itemEnemyMovement;
-            movement.setDir(new Vector2(1, 0));
-            movement.setSpeed(3);
-        }        
+            movement.enabled = item.isMove;
+        }
+
     }
     /**
 * @memo 2022
@@ -38,6 +39,11 @@ public class itemScript : MonoBehaviour
     public void setItem(item i)
     {
         item = i;
+        movement = GetComponent<itemEnemyMovement>();
+        if (movement != null)
+        {
+            movement.enabled = item.isMove;
+        }
     }
     /**
 * @memo 2022
@@ -63,7 +69,7 @@ public class itemScript : MonoBehaviour
 
                 break;
             case item.EffectType.Star:
-                Controller.instance.star();
+                Controller.instance.star(item.effectDuration);
                 break;
             case item.EffectType.Ice_Plant:
 

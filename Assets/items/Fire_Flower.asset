@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c315d29cd8b4dd349843d8067f5ac397, type: 3}
+  m_Name: Fire_Flower
+  m_EditorClassIdentifier: 
+  itemName: Fire Flower
+  itemObject: {fileID: 7467794657320429225, guid: 15a5ef37527829647a85419c2a097f23, type: 3}
+  isMove: 0
+  effectType: 4
+  effectDuration: -1

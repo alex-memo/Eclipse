@@ -25,10 +25,12 @@ public class blockItem : MonoBehaviour
         CircleCollider2D coll = GetComponent<CircleCollider2D>();
         BoxCollider2D trigger = GetComponent<BoxCollider2D>();
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        itemEnemyMovement movement = GetComponent<itemEnemyMovement>();
         rb.isKinematic = true;
         coll.enabled = false;
         trigger.enabled = false;
         spriteRenderer.enabled = false;
+        movement.enabled=false;
         yield return new WaitForSeconds(.25f);
         spriteRenderer.enabled = true;
         float timer = 0;
@@ -46,5 +48,6 @@ public class blockItem : MonoBehaviour
         rb.isKinematic = false;
         coll.enabled = true;
         trigger.enabled = true;
+        movement.enabled = true;
     }
 }

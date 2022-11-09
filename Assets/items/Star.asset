@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c315d29cd8b4dd349843d8067f5ac397, type: 3}
+  m_Name: Star
+  m_EditorClassIdentifier: 
+  itemName: Star
+  itemObject: {fileID: 4024187745120540851, guid: 23e85782dfc5df54090c0294cd689357, type: 3}
+  isMove: 1
+  effectType: 5
+  effectDuration: 10

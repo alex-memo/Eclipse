@@ -50,9 +50,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe93fb7d724da640a1cad1a67910445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smallRenderer: {fileID: 0}
-  bigRenderer: {fileID: 0}
-  deathAnimation: {fileID: 0}
 --- !u!114 &703922476827020811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,7 +69,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1775959485644696372}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 618da68df3b3c7d4983afcb4a41523b9, type: 3}
   m_Name: 
@@ -114,7 +111,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.75, y: 1}
   m_Direction: 0
 --- !u!1 &1775959486466161862
 GameObject:
