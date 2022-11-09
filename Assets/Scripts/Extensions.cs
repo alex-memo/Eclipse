@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 /**
  * @memo 2022
@@ -39,5 +38,35 @@ public static class Extensions
     {
         Vector2 dir = other.position - transform.position;//gets dir pointing from other to transform, most case transform is player       
         return Vector2.Dot(dir.normalized, direction)>.25f;
+    }
+    /**
+* @memo 2022
+* animates obj to movee up based on force
+*/
+    public static IEnumerator anim(this Transform transform, float force)
+    {
+        //isAnimating = true;
+        Vector3 restPos = transform.localPosition;
+        Vector3 animPos = restPos + Vector3.up *force;
+        //isAnimating = false;
+        yield return move(transform, restPos, animPos);
+        yield return move(transform, animPos, restPos);
+    }
+    /**
+* @memo 2022
+* lerps position between a and b
+*/
+    private static IEnumerator move(Transform transform, Vector3 f, Vector3 t)
+    {
+        float timer = 0;
+        float duration = .125f;
+        while (timer < duration)
+        {
+            float temp = timer / duration;
+            transform.localPosition = Vector3.Lerp(f, t, temp);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        transform.localPosition = t;
     }
 }

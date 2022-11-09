@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 /**
  * @memo 2022
@@ -31,21 +29,27 @@ public class koopaScript : enemyScript
     {
         if (isShell && collision.CompareTag("Player"))
         {
-            if (!isShellMoving)
+            if (Controller.instance.getIsStar())
+            {
+                hit();
+            }
+            else if (!isShellMoving)
             {
                 Vector2 dir = new Vector2(transform.position.x - collision.transform.position.x, 0f);
                 push(dir);
             }
             else
             {
+
                 Controller.instance.getHit();
+
             }
         }
         else if (!isShell)
         {
             base.OnTriggerEnter2D(collision);
         }
-        
+
     }
     /**
  * @memo 2022

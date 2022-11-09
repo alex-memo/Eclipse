@@ -16,8 +16,12 @@ public class enemyScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            if (Controller.instance.getIsStar())
+            {
+                hit();
+            }
             //chack dir of player is going down, meaning they stomped him
-            if (collision.transform.dotProduct(transform, Vector2.down))
+            else if (collision.transform.dotProduct(transform, Vector2.down))
             {
                 onDie();
             }
@@ -42,7 +46,7 @@ public class enemyScript : MonoBehaviour
  * @memo 2022
  * on hit then disable animation and enable death anim and then destroy
  */
-    private void hit()
+    protected void hit()
     {
         GetComponent<animationScript>().enabled = false;
         GetComponent<deathAnimation>().enabled = true;

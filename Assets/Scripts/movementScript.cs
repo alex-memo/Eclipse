@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 /**
  * @memo 2022
@@ -41,7 +39,7 @@ public class movementScript : MonoBehaviour
     void Update()
     {
         move();
-        isGrounded = body.Raycast(Vector2.down, GetComponent<Collider2D>().offset.y);//calls the extension file 
+        isGrounded = body.Raycast(Vector2.down, 0);//calls the extension file 
         if (isGrounded)
         {
             groundedMovement();

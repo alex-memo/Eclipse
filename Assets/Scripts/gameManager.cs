@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 /**
@@ -47,6 +45,7 @@ public class gameManager : MonoBehaviour
  */
     void Start()
     {
+        Application.targetFrameRate = 60;//sets the fps to 60
         NewGame();
     }
     /**
@@ -116,5 +115,26 @@ public class gameManager : MonoBehaviour
          * }
          * etc...
          */
+    }
+    /**
+* @memo 2022
+* adds a coin to player
+*/
+    public void addCoin()
+    {
+        coins++;
+        if (coins == 100)
+        {
+            coins = 0;
+            addLife();
+        }
+    }
+    /**
+* @memo 2022
+* adds life to player
+*/
+    public void addLife()
+    {
+        lives++;
     }
 }

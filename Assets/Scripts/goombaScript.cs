@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 /**
  * @memo 2022
  * goomba script, sub from enemyScript

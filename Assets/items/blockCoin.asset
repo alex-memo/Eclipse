@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c315d29cd8b4dd349843d8067f5ac397, type: 3}
-  m_Name: Mushroom
+  m_Name: blockCoin
   m_EditorClassIdentifier: 
-  itemName: Mushroom
-  itemObject: {fileID: 1168394615285168215, guid: 5854f8e0a92d90344b1a83d69e0757b1, type: 3}
-  isMove: 1
-  effectType: 2
+  itemName: Coin
+  itemObject: {fileID: 4993849639657166755, guid: 28aff31b140140a408693bdc4db8db14, type: 3}
+  isMove: 0
+  effectType: 0
   effectDuration: -1
