@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 8150943861275027770}
   - component: {fileID: 5964865219776875245}
   - component: {fileID: 7871973271978790584}
-  - component: {fileID: 1291181013966917793}
   - component: {fileID: 5346675129971144349}
   - component: {fileID: 2185324157128654365}
   - component: {fileID: -691711968941008744}
   - component: {fileID: 2618683287518269300}
+  - component: {fileID: 5567683104564092372}
   m_Layer: 7
   m_Name: Koopa
   m_TagString: Untagged
@@ -128,22 +128,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.25}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!58 &1291181013966917793
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4537304789447625158}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.25}
-  serializedVersion: 2
-  m_Radius: 0.75
 --- !u!114 &5346675129971144349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,3 +185,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 8150943861275027770}
   deadSprite: {fileID: 0}
+--- !u!61 &5567683104564092372
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4537304789447625158}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.125}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1.5}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.25, y: 1.25}
+  m_EdgeRadius: 0

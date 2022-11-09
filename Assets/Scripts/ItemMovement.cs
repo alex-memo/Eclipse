@@ -27,7 +27,7 @@ public class ItemMovement : MonoBehaviour
     }
     void ApplyGravity() {
         velocity.y += gravity * Time.deltaTime;
-        velocity.y = Mathf.Max(velocity.y, rb.Raycast(Vector2.down)?0:gravity); //If item is grounded, y velocity is 0. otherwise make sure it doesn't fall too fast
+        velocity.y = Mathf.Max(velocity.y, rb.Raycast(Vector2.down, GetComponent<Collider2D>().offset.y) ?0:gravity); //If item is grounded, y velocity is 0. otherwise make sure it doesn't fall too fast
 
         //Debug to check if raycast is working on mushroom (y velocity should be 0 when grounded) (ITS NOT WORKING HELP ALEX)
         print(velocity.y);

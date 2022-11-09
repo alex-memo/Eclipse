@@ -64,13 +64,13 @@ public class itemEnemyMovement : MonoBehaviour
     {
         velocity.x = dir.x * speed;
         velocity.y += gravity*Time.fixedDeltaTime;//could use Physics.gravity.y;
-        rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
-        if (rb.Raycast(dir))
+        rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);        
+        if (rb.Raycast(dir, GetComponent<Collider2D>().offset.x))//x axis
         {
             dir = -dir;
             transform.eulerAngles = new Vector3(0f, 180f, 0f);
         }
-        if (rb.Raycast(Vector2.down))
+        if (rb.Raycast(Vector2.down, GetComponent<Collider2D>().offset.y))
         {
             velocity.y = Mathf.Max(velocity.y, 0f);
         }

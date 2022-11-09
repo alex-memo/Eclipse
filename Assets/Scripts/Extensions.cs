@@ -14,14 +14,14 @@ public static class Extensions
      * returns if is grounded esencially, creates a circle beneath you and if colliding
      * with anything that is on default mask then means you're grounded
      */
-    public static bool Raycast(this Rigidbody2D rb, Vector2 dir)
+    public static bool Raycast(this Rigidbody2D rb, Vector2 dir, float offset)
     {
         if (rb.isKinematic)//you dont handle physics, then return false 
         {
             return false;
         }
         float radius = .25f;//radius of the raycast circle to create
-        float distance = .375f;//distance from below player to check, currently hardcoded could be collider *-.375
+        float distance = .375f-offset;//distance from below player to check, currently hardcoded could be collider *-.375
         RaycastHit2D hit = Physics2D.CircleCast(rb.position, radius, dir.normalized, distance, defaultMask);//creates raycast circle
 
         //return hit.collider != null && hit.rigidbody != rb;

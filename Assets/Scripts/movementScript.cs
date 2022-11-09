@@ -41,7 +41,7 @@ public class movementScript : MonoBehaviour
     void Update()
     {
         move();
-        isGrounded = body.Raycast(Vector2.down);//calls the extension file 
+        isGrounded = body.Raycast(Vector2.down, GetComponent<Collider2D>().offset.y);//calls the extension file 
         if (isGrounded)
         {
             groundedMovement();
@@ -82,7 +82,7 @@ public class movementScript : MonoBehaviour
     {
         inputAxis = Input.GetAxis("Horizontal");
         velocity.x = Mathf.MoveTowards(velocity.x, inputAxis * moveSpeed, Time.deltaTime * moveSpeed);
-        if (body.Raycast(Vector2.right * velocity.x) && inputAxis == 1)//if player running into wall then (right)
+        if (body.Raycast(Vector2.right * velocity.x, GetComponent<Collider2D>().offset.x) && inputAxis == 1)//if player running into wall then (right)
         {
             velocity.x = 0;//set accel to that place to 0
         }
