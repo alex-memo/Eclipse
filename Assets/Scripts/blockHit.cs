@@ -37,7 +37,7 @@ public class blockHit : MonoBehaviour
     {
         SpriteRenderer sprite = GetComponent<SpriteRenderer>();
         sprite.enabled = true;
-        if (!(blockType == BlockType.Brick&&Controller.instance.getSize().Equals("small")))
+        if (!(blockType == BlockType.Brick&&Controller.instance.getSize().Equals("small")&&item==null))
         {
             maxHits--;
 

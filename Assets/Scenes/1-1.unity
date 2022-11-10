@@ -9368,7 +9368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1775959486737696689, guid: 3e2fd0bb6571499408a6df881cf99c73, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1775959486737696690, guid: 3e2fd0bb6571499408a6df881cf99c73, type: 3}
       propertyPath: m_Sprite
@@ -9394,5 +9394,9 @@ PrefabInstance:
       propertyPath: idle
       value: 
       objectReference: {fileID: 21300000, guid: c97a14d564c861a4a998445512d9cfae, type: 3}
+    - target: {fileID: 5396196602341023557, guid: 3e2fd0bb6571499408a6df881cf99c73, type: 3}
+      propertyPath: jump
+      value: 
+      objectReference: {fileID: 21300000, guid: 05266521543f76643ad264869aa12342, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e2fd0bb6571499408a6df881cf99c73, type: 3}
