@@ -64,6 +64,7 @@ public class blockHit : MonoBehaviour
             if (brokenBlock == null)
             {
                 GetComponent<BoxCollider2D>().enabled = false;
+                Controller.instance.playBreakSound();
             }
         }
 

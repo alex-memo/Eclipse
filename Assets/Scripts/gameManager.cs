@@ -13,6 +13,9 @@ public class gameManager : MonoBehaviour
     private int coins;
 
     public item fireFlower;
+
+    private soundManager soundManager;
+    private AudioSource source;
     /**
  * @memo 2022
  * On awake, create instance of game manager if there is alr on then destroy
@@ -21,14 +24,16 @@ public class gameManager : MonoBehaviour
     {
         if (instance == null)
         {
+            Application.targetFrameRate = 60;//sets the fps to 60
             instance = this;
+            soundManager = GetComponent<soundManager>();
+            source = GetComponent<AudioSource>();
             DontDestroyOnLoad(gameObject);
         }
         else
         {
             DestroyImmediate(gameObject);
         }
-
     }
     /**
  * @memo 2022
@@ -46,8 +51,7 @@ public class gameManager : MonoBehaviour
  * on start creates a new game
  */
     void Start()
-    {
-        Application.targetFrameRate = 60;//sets the fps to 60
+    {        
         NewGame();
     }
     /**
@@ -69,6 +73,14 @@ public class gameManager : MonoBehaviour
         world = w;
         stage = s;
         SceneManager.LoadScene($"{world}-{stage}");
+        if (!$"{world}-{stage}".Equals("1-2"))
+        {
+            Play(soundManager.overworld);
+        }
+        else
+        {
+            Play(soundManager.underworld);
+        }
     }
     /**
  * @memo 2022
@@ -93,7 +105,8 @@ public class gameManager : MonoBehaviour
     private void GameOver()
     {
         //for now just restart game after 3sec
-        Invoke(nameof(NewGame), 3f);
+        Play(soundManager.lose);
+        Invoke(nameof(NewGame), 7f);
     }
     /**
  * @memo 2022
@@ -101,7 +114,14 @@ public class gameManager : MonoBehaviour
  */
     public void onDie(float delay)//resets the level basically
     {
-        Invoke(nameof(onDie), delay);
+        if (lives > 1)
+        {
+            Invoke(nameof(onDie), delay);
+        }
+        else
+        {
+            Invoke(nameof(onDie),0);
+        }        
     }
     /**
      * @memo 2022
@@ -124,6 +144,7 @@ public class gameManager : MonoBehaviour
 */
     public void addCoin()
     {
+        Controller.instance.Play(soundManager.coin);
         coins++;
         if (coins == 100)
         {
@@ -137,6 +158,27 @@ public class gameManager : MonoBehaviour
 */
     public void addLife()
     {
+        Controller.instance.Play(soundManager.oneUp);
         lives++;
+    }
+    /**
+     * @memo 2022
+     * getter for soundmanager
+     */
+    public soundManager getSoundManager()
+    {
+        return soundManager;
+    }
+    /**
+     * @memo 2022
+     * plays the set clip
+     */
+    public void Play(AudioClip clip)
+    {
+        if (clip != null)
+        {
+            source.clip = clip;
+            source.Play();
+        }        
     }
 }

@@ -19,6 +19,17 @@ public class Controller : MonoBehaviour
     private string size = "small";
     private CapsuleCollider2D capsuleColl;
     private bool isStar;
+
+    private AudioSource source;
+    private soundManager soundManager; 
+    /**
+     * @memo 2022
+     * start method, sets the sound manager
+     */
+    private void Start()
+    {
+        soundManager = gameManager.instance.getSoundManager();
+    }
     /**
      * @memo 2022
      * Awake method, creates an instance of the player controller
@@ -32,6 +43,7 @@ public class Controller : MonoBehaviour
         capsuleColl = GetComponent<CapsuleCollider2D>();
         activeRenderer = smallRenderer;
         size = "small";
+        source = GetComponent<AudioSource>();
         if (instance == null)
         {
             instance = this;
@@ -82,11 +94,12 @@ public class Controller : MonoBehaviour
  * @memo 2022
  * when die do this
  */
-    private void die()
+    public void die()
     {
         smallRenderer.enabled = false;
         bigRenderer.enabled = false;
         deathAnimation.enabled = true;
+        Play(soundManager.die);
         gameManager.instance.onDie(3f);
     }
     /**
@@ -168,5 +181,28 @@ public class Controller : MonoBehaviour
     public string getSize()
     {
         return size;
+    }
+    /**
+     * @memo 2022
+     * plays a break sound
+     */
+    public void playBreakSound()
+    {
+        if (soundManager.breakSounds.Length > 0)
+        {
+            int rand = Random.Range(0, soundManager.breakSounds.Length-1);
+            source.PlayOneShot(soundManager.breakSounds[rand]);
+        }       
+    }
+/**
+ * @memo 2022
+ * plays a set audio clip
+ */
+    public void Play(AudioClip clip)
+    {
+        if (clip != null)
+        {
+            source.PlayOneShot(clip);
+        }
     }
 }

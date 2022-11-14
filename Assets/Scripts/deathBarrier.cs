@@ -15,8 +15,8 @@ public class deathBarrier : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.gameObject.SetActive(false);
-            gameManager.instance.onDie(3f);
+            //collision.gameObject.SetActive(false);
+            Controller.instance.die();          
         }
         else
         {

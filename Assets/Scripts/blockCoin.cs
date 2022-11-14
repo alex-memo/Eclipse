@@ -12,8 +12,8 @@ public class blockCoin : MonoBehaviour
 */
     private void Start()
     {
-        gameManager.instance.addCoin();
-        StartCoroutine(transform.anim(timeDie));
+        gameManager.instance.addCoin();    
+        StartCoroutine(transform.anim(timeDie));  
         Destroy(gameObject,timeDie);
     }
 }
