@@ -7855,20 +7855,20 @@ MonoBehaviour:
   jump: {fileID: 8300000, guid: 266b5999552a7584ba4c51b93209433c, type: 3}
   flag: {fileID: 8300000, guid: 89fd5d1880ccfc1479e084d1c67cb63a, type: 3}
   coin: {fileID: 8300000, guid: 114cf1c1247a6ee4f8267b966c51859e, type: 3}
-  die: {fileID: 8300000, guid: eecb68f059440d54ab4f754eec0e5f53, type: 3}
+  die: {fileID: 8300000, guid: 290d209afeab1ed47b7cd5a8ef8f4adc, type: 3}
   lose: {fileID: 8300000, guid: c18c1634eb7be704c991003af3dab20f, type: 3}
   win: {fileID: 8300000, guid: ba7838becbbf4f84891e7b44a2f63f92, type: 3}
   pipe: {fileID: 8300000, guid: e0a57000dc76cbe42b47392be9e414b9, type: 3}
-  itemOutOfBox: {fileID: 0}
-  grow: {fileID: 0}
-  shrink: {fileID: 0}
-  fireFlowerGrab: {fileID: 0}
-  goombaStomp: {fileID: 0}
-  koopaShelled: {fileID: 0}
-  koopaDie: {fileID: 0}
-  oneUp: {fileID: 0}
+  itemOutOfBox: {fileID: 8300000, guid: 5cb2f134756c2a341868d5930e3553f6, type: 3}
+  grow: {fileID: 8300000, guid: df2576653086357418b714f41b834940, type: 3}
+  shrink: {fileID: 8300000, guid: 758013f5473cb36449c203a6424c7f88, type: 3}
+  fireFlowerGrab: {fileID: 8300000, guid: eecb68f059440d54ab4f754eec0e5f53, type: 3}
+  goombaStomp: {fileID: 8300000, guid: 7d0d9064c4551b5478189ec88d346bfb, type: 3}
+  koopaShelled: {fileID: 8300000, guid: 150c7e16107b5d04e87436e4705baa2d, type: 3}
+  koopaDie: {fileID: 8300000, guid: 7d0d9064c4551b5478189ec88d346bfb, type: 3}
+  oneUp: {fileID: 8300000, guid: c8a78d6b8a90dd54fb1aa01ae7342c1c, type: 3}
   blockHit: {fileID: 0}
-  star: {fileID: 0}
+  star: {fileID: 8300000, guid: d1a2e9b3642211f42a2c34734a13361b, type: 3}
   breakSounds:
   - {fileID: 8300000, guid: 81e266cd9835fa94ca8c74a1b589c85c, type: 3}
   - {fileID: 8300000, guid: 48df239dd6df00246b8c7b6322eb3a1e, type: 3}
