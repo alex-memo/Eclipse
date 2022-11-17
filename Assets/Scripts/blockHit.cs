@@ -43,6 +43,10 @@ public class blockHit : MonoBehaviour
 
             if (item != null)
             {
+                if (item.effectType != item.EffectType.Coin)
+                {
+                    Controller.instance.Play(gameManager.instance.getSoundManager().itemOutOfBox);
+                }
                 GameObject itemObj;
                 if (item.effectType == item.EffectType.Big_Mushroom && Controller.instance.getSize().Equals("big"))
                 {                    

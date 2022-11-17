@@ -50,6 +50,7 @@ public class enemyScript : MonoBehaviour
     {
         GetComponent<animationScript>().enabled = false;
         GetComponent<deathAnimation>().enabled = true;
+        Controller.instance.Play(gameManager.instance.getSoundManager().enemyDie);
         Destroy(gameObject, 3f);
     }
     /**
@@ -58,6 +59,7 @@ public class enemyScript : MonoBehaviour
  */
     protected virtual void onDie()
     {
+        Controller.instance.Play(gameManager.instance.getSoundManager().enemyDie);
         GetComponent<Collider2D>().enabled = false;
         GetComponent<itemEnemyMovement>().enabled = false;
         GetComponent<animationScript>().enabled = false;

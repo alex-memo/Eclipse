@@ -17,9 +17,8 @@ public class soundManager : MonoBehaviour
     public AudioClip grow;
     public AudioClip shrink;
     public AudioClip fireFlowerGrab;
-    public AudioClip goombaStomp;
+    public AudioClip enemyDie;
     public AudioClip koopaShelled;
-    public AudioClip koopaDie;
     public AudioClip oneUp;
     public AudioClip blockHit;
     public AudioClip star;

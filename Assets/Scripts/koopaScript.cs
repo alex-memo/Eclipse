@@ -83,6 +83,7 @@ public class koopaScript : enemyScript
     protected override void onDie()
     {
         isShell = true;
+        Controller.instance.Play(gameManager.instance.getSoundManager().koopaShelled);
         GetComponent<itemEnemyMovement>().enabled = false;
         GetComponent<animationScript>().enabled = false;
         GetComponent<SpriteRenderer>().sprite = deathSprite;

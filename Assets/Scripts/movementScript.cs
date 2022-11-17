@@ -59,6 +59,7 @@ public class movementScript : MonoBehaviour
         {
             velocity.y = jumpForce;
             isJumping = true;
+            Controller.instance.Play(gameManager.instance.getSoundManager().jump);
         }
     }
     /**

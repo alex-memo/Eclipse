@@ -89,6 +89,7 @@ public class Controller : MonoBehaviour
         capsuleColl.size = new Vector2(.75f, 1);
         capsuleColl.offset = new Vector2(0, 0);
         StartCoroutine(scaleAnim());
+        Play(soundManager.shrink);
     }
     /**
  * @memo 2022
@@ -115,6 +116,7 @@ public class Controller : MonoBehaviour
         capsuleColl.size = new Vector2(.75f, 2);
         capsuleColl.offset = new Vector2(0, .5f);
         StartCoroutine(scaleAnim());
+        Play(soundManager.grow);
     }
     /**
 * @memo 2022
