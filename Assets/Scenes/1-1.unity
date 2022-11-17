@@ -7863,9 +7863,8 @@ MonoBehaviour:
   grow: {fileID: 8300000, guid: df2576653086357418b714f41b834940, type: 3}
   shrink: {fileID: 8300000, guid: 758013f5473cb36449c203a6424c7f88, type: 3}
   fireFlowerGrab: {fileID: 8300000, guid: eecb68f059440d54ab4f754eec0e5f53, type: 3}
-  goombaStomp: {fileID: 8300000, guid: 7d0d9064c4551b5478189ec88d346bfb, type: 3}
+  enemyDie: {fileID: 8300000, guid: 7d0d9064c4551b5478189ec88d346bfb, type: 3}
   koopaShelled: {fileID: 8300000, guid: 150c7e16107b5d04e87436e4705baa2d, type: 3}
-  koopaDie: {fileID: 8300000, guid: 7d0d9064c4551b5478189ec88d346bfb, type: 3}
   oneUp: {fileID: 8300000, guid: c8a78d6b8a90dd54fb1aa01ae7342c1c, type: 3}
   blockHit: {fileID: 0}
   star: {fileID: 8300000, guid: d1a2e9b3642211f42a2c34734a13361b, type: 3}
