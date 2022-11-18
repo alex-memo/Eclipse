@@ -9951,6 +9951,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: c97a14d564c861a4a998445512d9cfae, type: 3}
+    - target: {fileID: 2007210232954642073, guid: 3e2fd0bb6571499408a6df881cf99c73, type: 3}
+      propertyPath: idle
+      value: 
+      objectReference: {fileID: 21300000, guid: c391fb9f74752db489e657e2f479b84e, type: 3}
     - target: {fileID: 2888756018004854154, guid: 3e2fd0bb6571499408a6df881cf99c73, type: 3}
       propertyPath: sprites.Array.data[0]
       value: 
@@ -9967,6 +9971,22 @@ PrefabInstance:
       propertyPath: sprites.Array.data[3]
       value: 
       objectReference: {fileID: 21300000, guid: 3c378a776dcafa14e833d2a664161e4f, type: 3}
+    - target: {fileID: 4669833983755321508, guid: 3e2fd0bb6571499408a6df881cf99c73, type: 3}
+      propertyPath: sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: f19fa557f5d733e4eabb4ff249323291, type: 3}
+    - target: {fileID: 4669833983755321508, guid: 3e2fd0bb6571499408a6df881cf99c73, type: 3}
+      propertyPath: sprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: a582b211c0c56ce41afcd3969aad66c8, type: 3}
+    - target: {fileID: 4669833983755321508, guid: 3e2fd0bb6571499408a6df881cf99c73, type: 3}
+      propertyPath: sprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 953458244d61c19418a1ab24f0cdfc04, type: 3}
+    - target: {fileID: 4669833983755321508, guid: 3e2fd0bb6571499408a6df881cf99c73, type: 3}
+      propertyPath: sprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: f19fa557f5d733e4eabb4ff249323291, type: 3}
     - target: {fileID: 5396196602341023557, guid: 3e2fd0bb6571499408a6df881cf99c73, type: 3}
       propertyPath: idle
       value: 
@@ -9975,9 +9995,17 @@ PrefabInstance:
       propertyPath: jump
       value: 
       objectReference: {fileID: 21300000, guid: 956b694591a33c348b6b1628ee066141, type: 3}
+    - target: {fileID: 5396196602341023557, guid: 3e2fd0bb6571499408a6df881cf99c73, type: 3}
+      propertyPath: slide
+      value: 
+      objectReference: {fileID: 21300000, guid: 26faecc1610e02044be585b0c525744d, type: 3}
     - target: {fileID: 7186511894479506240, guid: 3e2fd0bb6571499408a6df881cf99c73, type: 3}
       propertyPath: m_Volume
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7416117637335503617, guid: 3e2fd0bb6571499408a6df881cf99c73, type: 3}
+      propertyPath: deadSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dd830e48462c5fe499f02cfdba4f730e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e2fd0bb6571499408a6df881cf99c73, type: 3}
