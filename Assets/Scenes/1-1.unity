@@ -9955,6 +9955,14 @@ PrefabInstance:
       propertyPath: idle
       value: 
       objectReference: {fileID: 21300000, guid: c391fb9f74752db489e657e2f479b84e, type: 3}
+    - target: {fileID: 2007210232954642073, guid: 3e2fd0bb6571499408a6df881cf99c73, type: 3}
+      propertyPath: jump
+      value: 
+      objectReference: {fileID: 21300000, guid: 4ebe700929816b64d9371e21f1e57d28, type: 3}
+    - target: {fileID: 2007210232954642073, guid: 3e2fd0bb6571499408a6df881cf99c73, type: 3}
+      propertyPath: slide
+      value: 
+      objectReference: {fileID: 21300000, guid: 1276d843aecec5143b4f5064b4ac5545, type: 3}
     - target: {fileID: 2888756018004854154, guid: 3e2fd0bb6571499408a6df881cf99c73, type: 3}
       propertyPath: sprites.Array.data[0]
       value: 
