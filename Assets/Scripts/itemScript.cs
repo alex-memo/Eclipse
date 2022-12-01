@@ -66,7 +66,7 @@ public class itemScript : MonoBehaviour
 
                 break;
             case item.EffectType.Fire_Plant:
-
+                Controller.instance.fireFlower();
                 break;
             case item.EffectType.Star:
                 Controller.instance.star(item.effectDuration);

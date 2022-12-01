@@ -52,7 +52,7 @@ public class blockHit : MonoBehaviour
                     Controller.instance.Play(gameManager.instance.getSoundManager().itemOutOfBox);
                 }
                 GameObject itemObj;
-                if (item.effectType == item.EffectType.Big_Mushroom && Controller.instance.getSize().Equals("big"))
+                if (item.effectType == item.EffectType.Big_Mushroom && (Controller.instance.getSize().Equals("big")|| Controller.instance.getSize().Equals("fire")))
                 {                    
                     itemObj = Instantiate(gameManager.instance.fireFlower.itemObject, transform.position, Quaternion.identity);
                     itemObj.GetComponent<itemScript>().setItem(gameManager.instance.fireFlower);
