@@ -7,6 +7,8 @@ using UnityEngine;
  */
 public class cameraScript : MonoBehaviour
 {
+    public bool underground = false;
+    private float y=> underground ? -9.5f : 6.5f;
     private Transform player;
     /**
      * @memo 2022
@@ -23,7 +25,8 @@ public class cameraScript : MonoBehaviour
     private void LateUpdate()//late update to guarentee player position
     {
         Vector3 camPos = transform.position;
-        camPos.x = Mathf.Max(camPos.x,player.position.x);//prevents the cam from going back
+        camPos.x = Mathf.Max(camPos.x,player.position.x);//prevents the cam from going back       
+        camPos.y = y;
         transform.position = camPos;
     }
 }

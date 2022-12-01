@@ -129,7 +129,8 @@ public class gameManager : MonoBehaviour
      */
     public void NextLevel()
     {
-        LoadLevel(world, stage + 1);//if full game remaking then should have logic as follows
+        LoadLevel(1, 1);
+        //LoadLevel(world, stage + 1);//if full game remaking then should have logic as follows
         /**
          * if(world==1&&stage==10)
          * {
@@ -180,5 +181,18 @@ public class gameManager : MonoBehaviour
             source.clip = clip;
             source.Play();
         }        
+    }
+    /**
+ * @memo 2022
+ * plays the win clip
+ */
+    public void PlayWin()
+    {
+        if (soundManager.win != null)
+        {
+            source.clip = null;
+            //source.Play();
+            source.PlayOneShot(soundManager.win);
+        }
     }
 }

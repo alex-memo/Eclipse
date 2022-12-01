@@ -25,7 +25,11 @@ public class blockHit : MonoBehaviour
         {//if not currently animating the block & there is still something in box then
             if(collision.transform.dotProduct(transform, Vector2.up))
             {//checks if player hits from bottom to top
-                hit();
+                if(blockType!=BlockType.Solid)
+                {
+                    hit();
+                }
+                
             }
         }
     }

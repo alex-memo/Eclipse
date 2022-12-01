@@ -6,7 +6,7 @@ using UnityEngine;
 public class movementScript : MonoBehaviour
 {
     private Rigidbody2D body;
-    private new Collider2D collider;
+    private new CapsuleCollider2D collider;
     private float moveSpeed = 8f;
     private float inputAxis;
     private Vector2 velocity;
@@ -29,8 +29,31 @@ public class movementScript : MonoBehaviour
      */
     private void Awake()
     {
+        collider=GetComponent<CapsuleCollider2D>();
         body = GetComponent<Rigidbody2D>();
         cam = Camera.main;
+    }
+    /**
+     * @memo 2022
+     * only will have collider when this script enabled, and resets values
+     */
+    private void OnEnable()
+    {
+        body.isKinematic = false;
+        collider.enabled = true;
+        velocity = Vector2.zero;
+        isJumping = false;
+    }
+    /**
+     * @memo 2022
+     * disables collider when this is disabled, adn rresets values
+     */
+    private void OnDisable()
+    {
+        body.isKinematic = true;
+        collider.enabled = false;
+        velocity = Vector2.zero;
+        isJumping = false;
     }
     /**
      * @memo 2022
