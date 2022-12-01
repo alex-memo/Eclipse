@@ -51,7 +51,8 @@ public class gameManager : MonoBehaviour
  * on start creates a new game
  */
     void Start()
-    {        
+    {
+        Cursor.lockState = CursorLockMode.Locked;
         NewGame();
     }
     /**
